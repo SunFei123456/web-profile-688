@@ -1,0 +1,374 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* CSS Variables */
+:root{
+    --black:#000;
+    --white:#fff;
+    --gray:#333;
+    --primary:#8BFBFF;
+    --secondary:#fdbb79;
+    --third:#FF602A;
+    --grey-text:rgba(255, 255, 255, 0.8);
+    /* 模态相关变量：用于不同主题下的弹框背景与文本颜色 */
+    --modal-bg: rgb(15, 15, 15);
+    --modal-text: #fff;
+    --modal-border: rgba(255, 255, 255, 0.1);
+}
+
+/* Global Styles */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--black);
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+body.dark{
+    --black:#fff;
+    --white:#000;
+    --gray:#333;
+    --secondary:#8BFBFF;
+    --primary:#fb9938;
+    --third:#FF602A;
+    --grey-text: rgba(47, 47, 47, 0.8);
+    --modal-bg: rgb(255, 255, 255);
+    --modal-text: #000;
+    --modal-border: rgba(0, 0, 0, 0.1);
+}
+
+body.overflow{
+    overflow: hidden;
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+
+
+/* Theme Toggle Buttons */
+.theme-toggle-light{
+    position: fixed;
+    top: 200px;
+    right: 10px;
+    z-index: 10;
+    border: none;
+    background-color: transparent;
+    animation: rotate 2s linear infinite;
+    cursor: pointer;
+}
+
+.theme-toggle-light i{
+    font-size: 30px;
+    color: var(--white);
+}
+
+.theme-toggle-dark{
+    display: none;
+    position: fixed;
+    top: 200px;
+    right: 10px;
+    z-index: 10;
+    border: none;
+    background-color: transparent;
+    animation: rotate 2s linear infinite;
+    cursor: pointer;
+}
+
+.theme-toggle-dark i{
+    font-size: 30px;
+    color: var(--white);
+}
+
+/* Header */
+header{
+    position: relative;
+   
+
+}
+
+/* Navigation Bar */
+.navbar{
+    position: fixed;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.161);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 999;
+    transition: all 0.3s ease;
+}
+
+body.dark .navbar{
+    background-color: rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.logo{
+    color: var(--white);
+    user-select: none;
+}
+
+.navigation-menu {
+    margin-left: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    transition: all .3s;
+}
+
+.navigation-menu li a{
+    color: var(--white);
+    margin: 0 20px;
+}
+
+.navigation-menu li:hover a:not(.active){
+    color: var(--primary);
+}
+
+.navigation-menu li a.active{
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--primary);
+}
+
+.mobile-menu-toggle{
+    color: var(--white);
+    font-size: 25px;
+    display: none;
+    cursor: pointer;
+}
+
+.mobile-menu-toggle:hover{
+    color: var(--primary);
+    transform: scale(1.1);
+}
+
+/* Button Styles */
+.btn{
+    width: 165px;
+    height: 35px;
+    font-size: 15px;
+    border: none;
+    position: relative;
+    font-weight: 600;
+    overflow: hidden;
+    cursor: pointer;
+    color: var(--black);
+    transition: all 0.3s;
+    background-color: var(--white);
+}
+
+.btn:before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-100px) rotate(45deg);
+    background-color: var(--secondary);
+    transition: transform 0.3s;
+}
+
+.btn:after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-110px) rotate(45deg);
+    background-color: var(--primary);
+    transition: transform 0.3s;
+}
+
+.btn:hover{
+    border: 1px solid var(--white);
+    color: var(--white);
+    background-color: var(--black);
+}
+
+.btn:hover::before{
+    transform: translateX(100px) rotate(45deg);
+}
+
+.btn:hover::after{
+    transform: translateX(110px) rotate(45deg);
+}
+
+/* Section Common Styles */
+.section{
+    padding-top: 120px;
+    display: flex;
+    width: auto;
+    flex-direction: column;
+    margin: 0px 100px;
+    align-items: center;
+    justify-content: center;
+}
+
+.section .section-title{
+    text-transform: uppercase;
+    font-size: 50px;
+    color: var(--white);
+}
+
+.section .section-desc{
+    text-align: center;
+    color: var(--white);
+}
+
+.section a{
+    color: var(--primary);
+}
+
+.sec-dis{
+    min-height: 100vh;
+    display: flex;
+    overflow-y: auto;
+}
+
+/* Animations */
+@keyframes rotate {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsive - Mobile Navigation Only */
+@media screen and (max-width:905px) {
+    .navbar {
+        padding: 20px 40px;
+    }
+    
+    .navigation-menu{
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        flex-direction: column;
+        top: 0;
+        left: 0;
+        display: none;
+        visibility: hidden;
+        opacity: 0;
+        transform: translateX(-50px) translateY(-50px);
+        width: 100vw;
+        height: 110vh;
+        z-index: 100;
+        background-color: var(--black);
+    }
+    
+    .navigation-menu.dis{
+        display: flex;
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .navigation-menu li {
+        margin-top: 30px;
+    }
+    
+    .navigation-menu li a{
+        font-size: 20px;
+        position: relative;
+        letter-spacing: 2px;
+    }
+    
+    .navigation-menu:before{
+        content: 'Navigation';
+        color: rgba(158, 158, 158, 0.158);
+        font-size: 80px;
+        font-weight: 900;
+        text-transform: uppercase;
+        font-family: 'popins' ,sans-serif;
+        transform: translateY(230px) translateX(-50px) rotate(90deg);
+    }
+    
+    .mobile-menu-toggle {
+        display: block;
+        opacity: 1;
+        z-index: 100;
+    }
+}
+
+
+
+
+footer{
+   
+    width: 100%;
+    background-color: var(--black);
+    color: var(--white);
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+/* Page Transition Animations - Fade Effect */
+/* Fallback for browsers without View Transitions API */
+body {
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+body.page-exit {
+    animation: fadeOut 0.3s ease-in forwards;
+}
+
+/* 研究卡片摘要文本：全局控制默认显示 6 行内容，保持卡片一致性 */
+.research-card-text{
+    /* 通过 WebKit 盒模型限制垂直方向的布局，防止文本撑开卡片 */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    /* 限制最多 6 行且隐藏溢出内容，用省略号提示更多信息 */
+    -webkit-line-clamp: 6;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* 行高 × 行数，确保视觉高度与 main 样式一致 */
+    max-height: calc(1.8em * 6);
+}
+
+/* View Transitions API styles for modern browsers */
+@supports (view-transition-name: none) {
+    ::view-transition-old(root) {
+        animation: fadeOut 0.3s ease-in;
+    }
+    
+    ::view-transition-new(root) {
+        animation: fadeIn 0.5s ease-out;
+    }
+}

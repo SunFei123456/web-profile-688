@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Diyu Zhou Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./common.css">
+
+
+
+    <!-- CV Page Styles -->
+    <style>
+        .cv-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 150px 60px 60px;
+        }
+
+        .cv-intro {
+            margin-bottom: 60px;
+        }
+
+        .cv-intro h1 {
+            font-size: 48px;
+            color: var(--white);
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+
+        .cv-intro p {
+            color: var(--white);
+            font-size: 16px;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        .cv-section {
+            background: rgba(219, 219, 219, 0.18);
+            padding: 50px;
+            margin-bottom: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .cv-section-title {
+            font-size: 36px;
+            color: var(--white);
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+
+        .cv-item {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .cv-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .cv-item-left {
+            color: var(--white);
+        }
+
+        .cv-time {
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 10px;
+            color: var(--white);
+        }
+
+        .cv-institution {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--primary);
+            line-height: 1.4;
+        }
+
+        .cv-item-right {
+            color: var(--white);
+        }
+
+        .cv-position {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--white);
+        }
+
+        .cv-details {
+            font-size: 14px;
+            line-height: 1.6;
+            font-weight: 300;
+            color: var(--grey-text);
+        }
+
+        .cv-details-item {
+            margin-bottom: 5px;
+        }
+
+        .cv-link {
+            color: var(--primary);
+            text-decoration: underline;
+            transition: all 0.3s;
+        }
+
+        .cv-link:hover {
+            color: var(--secondary);
+        }
+
+        /* Publications Section */
+        .publication-item {
+            margin-bottom: 25px;
+            position: relative;
+            color: var(--white);
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+
+
+        .author-highlight {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .skill-item {
+            display: flex;
+            gap: 15px;
+        }
+
+        .skill-label {
+            font-weight: 600;
+            color: var(--white);
+            min-width: 200px;
+        }
+
+        .skill-value {
+            color: var(--white);
+            font-weight: 300;
+        }
+
+        /* Responsive Design for Mobile */
+        @media screen and (max-width: 768px) {
+            .cv-container {
+                padding: 120px 20px 40px;
+            }
+
+            .cv-intro h1 {
+                font-size: 32px;
+                margin-bottom: 20px;
+            }
+
+            .cv-intro p {
+                font-size: 14px;
+            }
+
+            .cv-section {
+                padding: 30px 20px;
+                margin-bottom: 30px;
+            }
+
+            .cv-section-title {
+                font-size: 28px;
+                margin-bottom: 30px;
+            }
+
+            .cv-item {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding-bottom: 30px;
+                margin-bottom: 30px;
+            }
+
+            .cv-item-left {
+                padding-bottom: 15px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .cv-time {
+                font-size: 13px;
+                margin-bottom: 8px;
+            }
+
+            .cv-institution {
+                font-size: 16px;
+            }
+
+            .cv-position {
+                font-size: 18px;
+            }
+
+            .cv-details {
+                font-size: 13px;
+            }
+
+            .publication-item {
+                font-size: 13px;
+                padding-left: 15px;
+                margin-bottom: 20px;
+            }
+
+            .skills-grid {
+                gap: 15px;
+            }
+
+            .skill-item {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .skill-label {
+                min-width: auto;
+                font-size: 14px;
+            }
+
+            .skill-value {
+                font-size: 13px;
+            }
+        }
+
+        /* Tablet Responsive */
+        @media screen and (max-width: 1024px) and (min-width: 769px) {
+            .cv-container {
+                padding: 130px 40px 50px;
+            }
+
+            .cv-intro h1 {
+                font-size: 40px;
+            }
+
+            .cv-section {
+                padding: 40px;
+            }
+
+            .cv-item {
+                grid-template-columns: 200px 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+     
+    <button class="theme-toggle-light" aria-label="Switch to dark mode"><i class="fas fa-sun"></i></button>
+    <button class="theme-toggle-dark" aria-label="Switch to light mode"> <i class="fas fa-moon"></i></button>
+
+    <header>
+        <nav class="navbar">
+            <h1><a href="index.html" class="logo">Diyu Zhou</a></h1>
+            <ul class="navigation-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a class="active" href="cv.html">CV</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="design.html">Design</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <i class="mobile-menu-toggle fas fa-bars" aria-label="Toggle menu"></i>
+        </nav>
+
+        <div class="cv-container">
+            <!-- Introduction -->
+            <div class="cv-intro">
+                <h1>Hi, I am Diyu Zhou</h1>
+                <p>Email: dz372@cornell.edu &nbsp;|&nbsp; Phone: +1-607-279-8371</p><br/>
+                <p>A design technology researcher and practitioner with expertise in XR development, motion capture systems, and human-computer interaction. Currently pursuing a Master's degree in Design Technology at Cornell University with a focus on developing immersive environments and intelligent interaction systems for healthcare and education.</p>
+            </div>
+
+            <!-- Education Section -->
+            <section class="cv-section">
+                <h2 class="cv-section-title">Education</h2>
+
+                <div class="cv-item">
+                    <div class="cv-item-left">
+                        <p class="cv-time">Sep. 2024 – Jun. 2026</p>
+                        <p class="cv-institution">Cornell University</p>
+                    </div>
+                    <div class="cv-item-right">
+                        <h3 class="cv-position">Master of Science, Design Technology</h3>
+                        <div class="cv-details">
+                            <p><strong>Related Courses: </strong> Physical Interaction, Python Coding, Design Thinking, Parametric Design, Additive and Subtractive Manufacturing</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cv-item">
+                    <div class="cv-item-left">
+                        <p class="cv-time">Sep. 2020 – Jun. 2024</p>
+                        <p class="cv-institution">Central China Normal University</p>
+                    </div>
+                    <div class="cv-item-right">
+                        <h3 class="cv-position">Bachelor of Art, Digital Media Design</h3>
+                        <div class="cv-details">
+                            <p><strong>Honors: </strong> Outstanding Student (2021-2023), Dangui Scholarships (2021-2023), Outstanding Graduate, Outstanding Graduate, Wuhan University of Technology (2024)</p>
+                            <p><strong>Related Courses: </strong> New Media, Interactive Design, Art Coding and Game Engine, Digital Imaging</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Research Experience & Relevant Projects Section -->
+            <section class="cv-section">
+                <h2 class="cv-section-title">Research Experience & Relevant Projects</h2>
+
+                <div class="cv-item">
+                    <div class="cv-item-left">
+                        <p class="cv-time">Aug. 2024 - Present</p>
+                        <p class="cv-institution">Cornell University (Design Augmented Intelligence Laboratory, DAIL Lab)</p><br/>
+                        <p class="cv-institution">Advisor: Prof. Saleh Kalantari</p>
+                    </div>
+                    <div class="cv-item-right">
+                        <h3 class="cv-position">Research Assistant</h3>
+                        <div class="cv-details">
+                            <p class="cv-details-item">• Developed multiple VR agents in Unreal Engine 5, integrating GPT-based language models and natural language recognition systems for adaptive conversational interaction in virtual environments.</p>
+                            <p class="cv-details-item">• Designed intelligent interaction logic supporting both proactive and reactive communication, enabling agents to assist users in wayfinding and task completion through natural cues.</p>
+                            <p class="cv-details-item">• Conducted several pilot studies to evaluate usability and interaction fluency, optimizing IK motion, agent triggers, and dialogue modes based on user feedback.</p>
+                            <p class="cv-details-item">• Recorded and analyzed user movement, hand gestures, and interaction data to assess agent performance and improve natural, user-centered virtual experiences.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cv-item">
+                    <div class="cv-item-left">
+                        <p class="cv-time">Mar. 2025 - Present</p>
+                        <p class="cv-institution">Cornell University (Design Augmented Intelligence Laboratory, DAIL Lab)</p><br/>
+                        <p class="cv-institution">Advisor: Prof. Saleh Kalantari</p>
+                    </div>
+                    <div class="cv-item-right">
+                        <h3 class="cv-position">Research Assistant</h3>
+                        <div class="cv-details">
+                            <p class="cv-details-item">• Developed an IMU-based motion capture system for real-time tracking of human movement and collection of range of motion (ROM) data from rehabilitation patients.</p>
+                            <p class="cv-details-item">• Integrated motion data with conventional rehabilitation exercises to support early-stage functional recovery after surgery and enhance training precision.</p>
+                            <p class="cv-details-item">• Implemented multi-view visualization and immersive VR game mechanisms to improve patients' proprioception, motivation, and engagement during rehabilitation.</p>
+                            <p class="cv-details-item">• Collaborated with rehabilitation medicine specialists and human-centered design experts through multiple interviews, refining interaction design and system usability based on expert feedback.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cv-item">
+                    <div class="cv-item-left">
+                        <p class="cv-time">Aug. 2025 - Present</p>
+                        <p class="cv-institution">Huazhong University of Science and Technology & Wuhan University of Technology</p><br/>
+                        <p class="cv-institution">Advisor: Dr. Yuxuan Li</p>
+                    </div>
+                    <div class="cv-item-right">
+                        <h3 class="cv-position">Research Assistant</h3>
+                        <div class="cv-details">
+                            <p class="cv-details-item">• Assisted in developing an AR-based knee arthroscopy training system using Unreal Engine 5 and Meta Quest 3 to support simulation-based surgical education.</p>
+                            <p class="cv-details-item">• Designed dual XR guidance modes, including in-situ and ex-situ visual cues, to assist trainees in identifying and practicing accurate puncture points during arthroscopic procedures.</p>
+                            <p class="cv-details-item">• Implemented a data acquisition module to record puncture trajectories and hand movement patterns for evaluating the usability and efficiency of different guidance strategies.</p>
+                            <p class="cv-details-item">• Collaborated with surgical experts to refine system interaction design, aiming to enhance the realism and pedagogical value of preoperative training.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cv-item">
+                    <div class="cv-item-left">
+                        <p class="cv-time">June 2024 - June 2025</p>
+                        <p class="cv-institution">University of Hong Kong & Wuhan University of Technology</p><br/>
+                        <p class="cv-institution">Advisor: Dr. Yuxuan Li</p>
+                    </div>
+                    <div class="cv-item-right">
+                        <h3 class="cv-position">Research Assistant</h3>
+                        <div class="cv-details">
+                            <p class="cv-details-item">• Contributed to the development of an ACL surgical navigation system integrating optical tracking data for spatial localization and coordinate transformation.</p>
+                            <p class="cv-details-item">• Deployed the system on the HoloLens platform using Unity streaming to provide a mixed-reality training environment for orthopedic procedures.</p>
+                            <p class="cv-details-item">• Integrated visual, haptic, and auditory feedback channels to create a multimodal navigation interface that reduces cognitive load during bone drilling tasks.</p>
+                            <p class="cv-details-item">• Evaluated system performance through comparative studies, demonstrating superior accuracy and stability over conventional image-guided navigation systems.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cv-item">
+                    <div class="cv-item-left">
+                        <p class="cv-time">Mar. 2024 - June 2024</p>
+                        <p class="cv-institution">Central China Normal University</p><br/>
+                        <p class="cv-institution">Advisor: Prof. Han Zhang</p>
+                    </div>
+                    <div class="cv-item-right">
+                        <h3 class="cv-position">Research Assistant</h3>
+                        <div class="cv-details">
+                            <p class="cv-details-item">• Co-designed a virtual psychological healing environment using Unreal Engine 4 to examine how daylight intensity influences emotional regulation.</p>
+                            <p class="cv-details-item">• Developed four immersive natural scenes—water and sky, woodland and sky, grassland and sky, and balanced elemental environments—each paired with customized Lofi music.</p>
+                            <p class="cv-details-item">• Implemented a dynamic lighting system simulating real-time transitions across morning, noon, dusk, and night to enable precise light condition manipulation in VR.</p>
+                            <p class="cv-details-item">• Conducted semi-structured interviews with thirty participants, revealing that variations in light intensity significantly influenced emotional responses and perceived relaxation.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Publications Section -->
+            <section class="cv-section">
+                <h2 class="cv-section-title">Publications</h2>
+
+                <div class="publication-item">
+                    <strong>[1].&nbsp; </strong> Guo, Y., and <span class="author-highlight">Zhou, D.</span> "The Application of Gestalt Psychology's Principles of Visual Perception in Subway Spatial Visual Orientation." Da Zhong Wen Yi, vol. 8, 2023.
+                </div>
+
+                <div class="publication-item">
+                    <strong>[2].&nbsp; </strong> Zhang, H., and <span class="author-highlight">Zhou, D.</span> "Effects of Daylight Intensity on Emotion Regulation in a Virtual Healing Space." Human Factors in Design, Engineering, and Computing, vol. 159, 2024, pp. 1178–1186.
+                </div>
+
+                <div class="publication-item">
+                    <strong>[3].&nbsp; </strong> Li, Y., Ma, Z., Han, X., <span class="author-highlight">Zhou, D.</span>, & Wang, Z. (Under Review). A Multi-Objective Optimization Method for UI Interfaces Integrating NSGA-II and Simulated Annealing. Scientific Reports. (Under second-round review)
+                </div>
+            </section>
+
+            <!-- Professional Experience Section -->
+            <section class="cv-section">
+                <h2 class="cv-section-title">Professional Experience</h2>
+
+                <div class="cv-item">
+                    <div class="cv-item-left">
+                        <p class="cv-institution">Wuhan Senling Medical Co., Ltd.</p>
+                    </div>
+                    <div class="cv-item-right">
+                        <h3 class="cv-position">Product Design</h3>
+                        <div class="cv-details">
+                            <p class="cv-details-item">• Conducted user research and market analysis to define target personas and guide the design direction of multiple medical products.</p>
+                            <p class="cv-details-item">• Collaborated with cross-functional teams to develop innovative, user-friendly medical solutions that align with clinical needs and regulatory standards.</p>
+                            <p class="cv-details-item">• Designed intuitive product interfaces and streamlined design workflows to enhance usability, compliance, and development efficiency.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section class="cv-section">
+                <h2 class="cv-section-title">Skills</h2>
+
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <span class="skill-label">Model Design:</span>
+                        <span class="skill-value">3DMax, Maya, C4D, Rhino7/8, Grasshopper, SU, ZBrush, 3D Printing</span>
+                    </div>
+
+                    <div class="skill-item">
+                        <span class="skill-label">Interaction Design:</span>
+                        <span class="skill-value">Arduino, Unity, Python, UE4/5, C++, C#, Processing</span>
+                    </div>
+
+                    <div class="skill-item">
+                        <span class="skill-label">Languages:</span>
+                        <span class="skill-value">Mandarin (Native), English (Fluent)</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            <p>Copyright © 2025 Diyu Zhou. All rights reserved.</p>
+        </footer>
+    </header>
+
+    <script src="./main.js"></script>
+</body>
+
+</html>

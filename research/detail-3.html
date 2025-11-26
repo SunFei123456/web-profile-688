@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Project Detail - Diyu Zhou</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../common.css">
+
+    <style>
+        .detail-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 150px 30px 30px;
+            padding-top: 100px;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 14px;
+            margin-bottom: 40px;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            transform: translateX(-5px);
+        }
+
+        .detail-header {
+            margin-bottom: 40px;
+        }
+
+
+
+        .detail-title {
+            font-size: 42px;
+            color: var(--white);
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .detail-subtitle {
+            font-size: 18px;
+            color: var(--grey-text);
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+
+        .detail-content {
+            color: var(--white);
+            line-height: 1.8;
+        }
+
+
+
+        .detail-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .detail-gallery img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        /* Video Container Styles */
+        .detail-video {
+            width: 100%;
+            margin: 40px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .detail-video video {
+            width: 100%;
+            display: block;
+        }
+
+        .detail-video-controls {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            text-align: center;
+        }
+
+        .video-title {
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0;
+        }
+
+
+        /* Responsive */
+        @media screen and (max-width: 768px) {
+            .detail-container {
+                padding: 120px 20px 40px;
+            }
+
+            .detail-title {
+                font-size: 32px;
+            }
+
+            .detail-subtitle {
+                font-size: 16px;
+            }
+
+            .detail-image {
+                height: 300px;
+            }
+
+            .detail-content h2 {
+                font-size: 24px;
+            }
+
+            .detail-content h3 {
+                font-size: 20px;
+            }
+
+            .detail-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .detail-gallery img {
+                height: 250px;
+            }
+
+            .detail-video {
+                margin: 30px 0;
+            }
+        }
+
+        .single-graph {
+            width: 100%;
+            border: 1px solid var(--grey-text);
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Prevent Theme Flash -->
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark');
+            }
+        })();
+    </script>
+
+
+    <button class="theme-toggle-light" aria-label="Switch to dark mode"><i class="fas fa-sun"></i></button>
+    <button class="theme-toggle-dark" aria-label="Switch to light mode"><i class="fas fa-moon"></i></button>
+
+    <header>
+        <nav class="navbar">
+            <h1><a href="../index.html" class="logo">Diyu Zhou</a></h1>
+            <ul class="navigation-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../cv.html">CV</a></li>
+                <li><a class="active" href="../research.html">Research</a></li>
+                <li><a href="../design.html">Design</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+            <i class="mobile-menu-toggle fas fa-bars" aria-label="Toggle menu"></i>
+        </nav>
+
+        <div class="detail-container">
+            <a href="../research.html" class="back-button">
+                <i class="fas fa-arrow-left"></i>
+                Back to Research
+            </a>
+
+            <!-- title & desc -->
+            <div class="detail-header">
+                <h1 class="detail-title">Post-Disaster Temporary Settlement Navigation: A Comparative
+                            Study Using VR and Space Syntax</h1>
+                <p class="detail-subtitle">
+                   In recent years, natural disasters and armed conflicts have occurred with increasing
+                            frequency, severely disrupting everyday life. These events produce large numbers of
+                            displaced refugees, creating significant challenges for the planning and design of
+                            post-disaster temporary settlements. One crucial issue is how to use spatial layout to
+                            facilitate efficient movement and resource acquisition within these settlements. This study
+                            identifies four prototypical spatial configurations commonly found in temporary
+                            settlements—fishbone, organic growth, grid, and bagua—and constructs corresponding 3D
+                            virtual environments. To simulate the navigation behaviors of disaster victims seeking
+                            supplies and gathering within settlements, 36 university students were recruited to perform
+                            navigation tasks in VR across the four layouts. Their task completion time and walking
+                            trajectories were recorded.
+
+                            <br><br>
+                            Using space syntax analysis, we quantified the intelligibility of each layout and extracted
+                            three types of optimal paths between task nodes: the shortest metric path, the fewest-turns
+                            path, and the minimum-angle-change path. This study focuses on two core questions:
+                            <br>
+                            (1) Whether differences in spatial intelligibility across layouts significantly affect
+                            navigation efficiency (i.e., reaction time).
+                            <br>
+                            (2) How strongly each of the three optimal path types influences participants’ route
+                            choices.
+
+                            <br><br>
+                            Statistical results show that settlements with higher spatial intelligibility yield
+                            significantly shorter reaction times, while gender and prior spatial-training experience
+                            have no significant effect. Overlap analysis between participants’ actual trajectories and
+                            the three optimal path types revealed the following ranking (from highest to lowest
+                            similarity): shortest metric path, minimum-angle-change path, and fewest-turns path.
+
+                            <br><br>
+                            Through the combined use of space syntax and VR-based comparative experiments, this study
+                            reveals the mechanisms by which settlement layout shapes spatial navigation behavior in
+                            post-disaster contexts, providing valuable guidance for the future planning and design of
+                            temporary disaster relief settlements.
+            </div>
+
+
+            <img src="../images/research/work3/1.png" alt="Site Analysis" class="single-graph">
+            <img src="../images/research/work3/2.png" alt="Site Analysis" class="single-graph">
+
+            <img src="../images/research/work3/3.png" alt="Site Analysis" class="single-graph">
+
+
+        </div>
+
+        <footer>
+            <p>Copyright © 2025 Diyu Zhou. All rights reserved.</p>
+        </footer>
+    </header>
+
+    <script src="../main.js"></script>
+    <script src="../js/image-viewer.js"></script>
+</body>
+
+</html>

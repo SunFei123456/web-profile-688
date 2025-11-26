@@ -1,0 +1,42 @@
+GameTime_16.1  :grabCucumbers
+GameTime_19.89  :put down Cucumbers
+GameTime_20.11  :finishCucumbers
+GameTime_25.43  :grabGreen apple
+GameTime_29.12  :put down Green apple
+GameTime_29.31  :finishGreen apple
+GameTime_36.54  :grabChicken
+GameTime_40.3  :put down Chicken
+GameTime_40.43  :finishChicken
+GameTime_55.92  :agent help
+GameTime_60.91  :grabMayonnaise
+GameTime_65.86  :put down Mayonnaise
+GameTime_65.99  :finishMayonnaise
+GameTime_75.32  :grabHam
+GameTime_76.24  :put down Ham
+GameTime_79.02  :agent help
+GameTime_85.93  :grabWhite bread
+GameTime_91.25  :put down White bread
+GameTime_91.42  :finishWhite bread
+GameTime_107.47  :grabMango
+GameTime_108.14  :put down Mango
+GameTime_108.78  :agent help
+GameTime_115.9  :grabAvocado
+GameTime_119.82  :put down Avocado
+GameTime_120.02  :finishAvocado
+GameTime_127.67  :agent help
+GameTime_130.83  :grabPomegranate
+GameTime_134.27  :put down Pomegranate
+GameTime_134.47  :finishPomegranate
+GameTime_137.09  :grabCheese
+GameTime_140.13  :put down Cheese
+GameTime_140.31  :finishCheese
+GameTime_147.16  :grabKetchup
+GameTime_147.76  :put down Ketchup
+GameTime_149.14  :agent help
+GameTime_153.2  :grabSalt
+GameTime_154.1  :put down Salt
+GameTime_154.81  :grabSugar
+GameTime_155.42  :put down Sugar
+GameTime_155.93  :grabSalt
+GameTime_157.96  :put down Salt
+GameTime_158.12  :finishSalt

@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research - Diyu Zhou Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./common.css">
+
+    <!-- Research Page Styles -->
+    <style>
+        .research-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 150px 60px 60px;
+        }
+
+        .research-header {
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .research-header h1 {
+            font-size: 48px;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .research-header p {
+            color: var(--white);
+            font-size: 16px;
+            font-weight: 300;
+        }
+
+        .research-header a {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+
+        .research-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 80px;
+        }
+
+        /* Blog Post Card Style */
+        .research-card {
+            width: 100%;
+            padding: 4rem;
+            background: rgba(219, 219, 219, 0.18);
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .research-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .research-card-img {
+            min-width: 35rem;
+            max-width: 35rem;
+            height: 30rem;
+            transform: translateX(-8rem);
+            position: relative;
+        }
+
+        .research-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 12px;
+        }
+
+        .research-card-img::before {
+            content: '';
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 12px;
+            border: 1px dashed var(--primary);
+            ;
+        }
+
+        .research-card-info {
+            flex: 1;
+        }
+
+        /* DOI 标签样式：作为研究元信息展示，并提示可交互 */
+        .research-card-doi {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 0px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--primary);
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .research-card-title {
+            font-size: 18px;
+            margin: 1.5rem 0 1rem;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .research-card-text {
+            margin-bottom: 2.5rem;
+            font-size: 15px;
+            color: var(--white);
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        .research-card-cta {
+            display: inline-block;
+            padding: 12px 30px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-size: 13px;
+            color: var(--white);
+            background: linear-gradient(to right, var(--primary) 0%, var(--secondary) 100%);
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .research-card-cta:hover {
+            background: linear-gradient(to right, var(--secondary) 0%, var(--primary) 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(139, 251, 255, 0.4);
+        }
+
+        /* Responsive */
+        @media screen and (max-width: 768px) {
+            .research-container {
+                padding: 120px 20px 40px;
+            }
+
+            .research-card {
+                padding: 2rem;
+                flex-direction: column;
+            }
+
+            .research-card-img {
+                min-width: 100%;
+                max-width: 100%;
+                height: 25rem;
+                transform: translate(0, -4rem);
+            }
+
+            .research-header h1 {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <button class="theme-toggle-light" aria-label="Switch to dark mode"><i class="fas fa-sun"></i></button>
+    <button class="theme-toggle-dark" aria-label="Switch to light mode"> <i class="fas fa-moon"></i></button>
+
+    <header>
+        <nav class="navbar">
+            <h1><a href="index.html" class="logo">Diyu Zhou</a></h1>
+            <ul class="navigation-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cv.html">CV</a></li>
+                <li><a class="active" href="research.html">Research</a></li>
+                <li><a href="design.html">Design</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <i class="mobile-menu-toggle fas fa-bars" aria-label="Toggle menu"></i>
+        </nav>
+
+        <div class="research-container">
+            <div class="research-header">
+                <h1>Research</h1>
+                <p>Here are my research projects and academic work. Want to know more? <a
+                        href="mailto:dz372@cornell.edu">Email me</a>.</p>
+            </div>
+
+            <div class="research-cards">
+                <!-- Research Card 1 -->
+                <div class="research-card">
+                    <div class="research-card-img">
+                        <img src="./images/research/r1.png" alt="Research Project 1" />
+                    </div>
+                    <div class="research-card-info">
+                        <a class="research-card-doi" href="https://doi.org/10.54941/ahfe1005685" target="_blank"
+                            rel="noopener" aria-label="跳转至 DOI 详情">DOI: 10.54941/ahfe1005685</a>
+                        <h2 class="research-card-title">Effects of Daylight Intensity on Emotion
+                            Regulation in a Virtual Healing Space</h2>
+                        <p class="research-card-text">
+                            With increasing social pressure, the youth population in colleges and universities
+                            generally faces increasingly severe negative emotional problems, which not only affect
+                            academic performance but also significantly reduce the quality of daily life. In response
+                            to this challenge, numerous educational institutions have established psychological
+                            healing rooms to provide emotional support and stress management services.
+                            However, existing psychological healing spaces often fail to achieve the expected
+                            healing effects and affect student engagement due to a lack of sufficient privacy
+                            and interactivity. To address this issue, this study proposes a virtual psychological
+                            healing space design based on the audiovisual fusion effect, aiming to improve
+                            students’ emotional regulation and mental health management by enhancing privacy
+                            and interactivity. The design prototype incorporates four natural environments: water
+                            and sky, woodland and sky, grassland and sky, and elemental uniform distribution
+                            environments. Each environment is paired with customized Lofi music to enhance the
+                            healing effect through a multi-sensory experience. Additionally, by utilizing Unreal
+                            Engine’s dynamic sky and weather simulation system for natural light, real-time
+                            transitions between four lighting environments (early morning, midday, dusk, and
+                            night) were achieved in virtual reality to explore the specific effects of light intensity
+                            on emotion regulation. This study surveyed 30 college student participants to collect
+                            the subjective effects of environmental lighting on emotions in a virtual healing space
+                            through semi-structured interviews. This study demonstrates that varying lighting
+                            conditions have a significant impact on participants’ emotional states. It underscores
+                            the critical necessity of customizing lighting to accommodate the specific needs of
+                            users in the design of virtual healing spaces, thereby minimizing the influence of
+                            inter-individual differences on therapeutic outcomes. The results of this study provide
+                            an empirical basis for designing virtual healing spaces and are expected to offer
+                            a theoretical reference and practical basis for implementing personalized healing
+                            strategies in virtual environments
+                        </p>
+                        <a href="research/detail-1.html" class="research-card-cta">Read More</a>
+                    </div>
+                </div>
+
+                <!-- Research Card 2 -->
+                <div class="research-card">
+                    <div class="research-card-img">
+                        <img src="./images/research/r2.png" alt="Research Project 2" />
+                    </div>
+                    <div class="research-card-info">
+                        <a class="research-card-doi" href="javscript:;;" rel="noopener" aria-label="跳转至 DOI 详情">Under
+                            Review</a>
+                        <h2 class="research-card-title">A Multi-Objective Optimization Method for UI Interfaces
+                            Integrating NSGA-II and Simulated Annealing</h2>
+                        <p class="research-card-text">
+                            Traditional user interface layout design heavily relies on designers' subjective judgment
+                            and lacks effective quantitative assessment methods. This study aims to overcome this
+                            shortcoming. Therefore, this paper proposes a multi-objective optimization (MOO) system
+                            designed for the low-fidelity prototyping phase to enable faster production of high-quality
+                            interface layouts. A hybrid algorithm (SNSGA-II) is designed in the system, which combines
+                            the Non-Dominated Sorting Genetic Algorithm II (NSGA-II) and the simulated annealing (SA)
+                            algorithm, along with a scoring system including both aesthetics and usability. During the
+                            high-temperature phase, the SA algorithm is responsible for global exploration, while the
+                            genetic algorithm is introduced during the low-temperature phase for refined optimization,
+                            combined with an improved sigmoid function to dynamically balance the weights of each
+                            evaluation dimension. The experimental results show that this system achieved significant
+                            optimization effects across three UI design tasks with varying complexity levels. Compared
+                            with traditional NSGA-II algorithm, the SNSGA-II algorithm demonstrated approximately 50%
+                            improvement in convergence speed. Evaluation by 20 professional UI designers showed that
+                            system-optimized designs exhibited consistent improvements across all complexity levels:
+                            overall design quality enhanced by 3.0%, 6.7%, and 6.5% for simple, moderate, and complex
+                            tasks respectively; aesthetic scores correspondingly increased by 5.6%, 5.7%, and 5.2%;
+                            learnability indicators improved by 4.1%, 6.1%, and 7.2% respectively. This study confirmed
+                            the effectiveness of this approach in balancing aesthetics and usability, demonstrating its
+                            algorithmic performance and practical optimization potential.
+                        </p>
+                        <a href="./research/detail-2.html" class="research-card-cta">Read More</a>
+                    </div>
+                </div>
+
+                <!-- Research Card 3 -->
+                <div class="research-card">
+                    <div class="research-card-img">
+                        <img src="./images/research/r3.png" alt="Research Project 3" />
+                    </div>
+                    <div class="research-card-info">
+                        <h2 class="research-card-title">Post-Disaster Temporary Settlement Navigation: A Comparative
+                            Study Using VR and Space Syntax</h2>
+                        <p class="research-card-text">
+                            In recent years, natural disasters and armed conflicts have occurred with increasing
+                            frequency, severely disrupting everyday life. These events produce large numbers of
+                            displaced refugees, creating significant challenges for the planning and design of
+                            post-disaster temporary settlements. One crucial issue is how to use spatial layout to
+                            facilitate efficient movement and resource acquisition within these settlements. This study
+                            identifies four prototypical spatial configurations commonly found in temporary
+                            settlements—fishbone, organic growth, grid, and bagua—and constructs corresponding 3D
+                            virtual environments. To simulate the navigation behaviors of disaster victims seeking
+                            supplies and gathering within settlements, 36 university students were recruited to perform
+                            navigation tasks in VR across the four layouts. Their task completion time and walking
+                            trajectories were recorded.
+
+                            <br><br>
+                            Using space syntax analysis, we quantified the intelligibility of each layout and extracted
+                            three types of optimal paths between task nodes: the shortest metric path, the fewest-turns
+                            path, and the minimum-angle-change path. This study focuses on two core questions:
+                            <br>
+                            (1) Whether differences in spatial intelligibility across layouts significantly affect
+                            navigation efficiency (i.e., reaction time).
+                            <br>
+                            (2) How strongly each of the three optimal path types influences participants’ route
+                            choices.
+
+                            <br><br>
+                            Statistical results show that settlements with higher spatial intelligibility yield
+                            significantly shorter reaction times, while gender and prior spatial-training experience
+                            have no significant effect. Overlap analysis between participants’ actual trajectories and
+                            the three optimal path types revealed the following ranking (from highest to lowest
+                            similarity): shortest metric path, minimum-angle-change path, and fewest-turns path.
+
+                            <br><br>
+                            Through the combined use of space syntax and VR-based comparative experiments, this study
+                            reveals the mechanisms by which settlement layout shapes spatial navigation behavior in
+                            post-disaster contexts, providing valuable guidance for the future planning and design of
+                            temporary disaster relief settlements.
+                        </p>
+                        <a href="./research/detail-3.html" class="research-card-cta">Read More</a>
+                    </div>
+                </div>
+
+                <!-- Research Card 4 -->
+                <div class="research-card">
+                    <div class="research-card-img">
+                        <img src="./images/research/r4.png" alt="Research Project 4" />
+                    </div>
+                    <div class="research-card-info">
+                        <h2 class="research-card-title">Development of an Immersive IMU-Based Gamified Virtual Reality
+                            System for ACL Postoperative Knee Rehabilitation</h2>
+                        <p class="research-card-text">
+                            Postoperative rehabilitation following anterior cruciate ligament reconstruction remains
+                            limited by insufficient real time feedback, inconsistent adherence, and the absence of
+                            individualized sensor driven evaluation. Current home based rehabilitation practices rarely
+                            capture the neuromechanical factors that underlie functional recovery, including
+                            proprioceptive deficits, joint loading asymmetries, and altered movement strategies. This
+                            research proposes the development of an immersive rehabilitation framework that integrates
+                            inertial measurement unit based motion capture with virtual reality environments to
+                            investigate how real time digital representations of movement can enhance sensorimotor
+                            learning. By combining multi sensor IMU data with a VR based digital twin of lower limb
+                            motion, the system will provide multimodal biofeedback that adapts to the user’s performance
+                            in real time. The project aims to examine how immersive feedback influences proprioceptive
+                            recalibration, movement symmetry, and patient motivation, and to develop computational
+                            models capable of characterizing individual recovery trajectories. The expected contribution
+                            is a validated sensor driven rehabilitation paradigm that advances theoretical understanding
+                            of motor learning in postoperative populations while informing the design of next generation
+                            interactive rehabilitation technologies.
+                        </p>
+                        <a href="./research/detail-4.html" class="research-card-cta">Read More</a>
+                    </div>
+                </div>
+
+                <!-- Research Card 5 -->
+                <div class="research-card">
+                    <div class="research-card-img">
+                        <img src="./images/r5.jpg" alt="Research Project 5" />
+                    </div>
+                    <div class="research-card-info">
+                        <h2 class="research-card-title">Balancing Initiative in Embodied Navigation: Comparing
+                            Conventional, Automatic, and Proactive AI Guidance in a VR Kitchen Task</h2>
+                        <p class="research-card-text">
+                            This study investigates how three AI assistance strategies—Conventional (user-initiated),
+                            Automatic (time-based), and Proactive (behavior-triggered)—shape wayfinding performance and
+                            user experience in a VR kitchen task. Using behavioral logs, trajectories, and event data
+                            from three participants across all conditions, we observe consistent patterns: the
+                            Conventional assistant leads to prolonged hesitation and delayed help-seeking; the Automatic
+                            assistant reduces disorientation but disrupts natural exploration through frequent,
+                            time-driven prompts; and the Proactive assistant intervenes only when behavioral cues
+                            indicate genuine confusion, providing timely support without interrupting ongoing activity.
+                            These results offer preliminary evidence that Proactive assistance achieves the best balance
+                            between efficiency and experiential quality—improving navigation performance while
+                            preserving user agency and reducing cognitive load. We discuss design implications for
+                            embodied AI guidance, including respecting bodily cues, aligning intervention timing with
+                            user rhythms, and avoiding over-automation in XR navigation systems.
+                        </p>
+                        <a href="./research/detail-5.html" class="research-card-cta">Read More</a>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <footer>
+            <p>Copyright 2025 Diyu Zhou. All rights reserved.</p>
+        </footer>
+    </header>
+
+    <script src="./main.js"></script>
+</body>
+
+</html>

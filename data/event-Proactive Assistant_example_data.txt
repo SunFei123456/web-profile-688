@@ -1,0 +1,44 @@
+GameTime_33.74  :grabBell peppers
+GameTime_36.62  :put down Bell peppers
+GameTime_36.78  :finishBell peppers
+GameTime_44.69  :grabCucumbers
+GameTime_45.4  :put down Cucumbers
+GameTime_55.55  :agent help
+GameTime_63.8  :grabSpiky fruit Horned melon
+GameTime_68.22  :put down Spiky fruit Horned melon
+GameTime_68.38  :finishSpiky fruit Horned melon
+GameTime_70.33  :grabTuna
+GameTime_71.11  :put down Tuna
+GameTime_71.23  :finishTuna
+GameTime_76.52  :grabMayonnaise
+GameTime_77.83  :put down Mayonnaise
+GameTime_78.98  :grabSoy sauce
+GameTime_84.04  :put down Soy sauce
+GameTime_84.23  :finishSoy sauce
+GameTime_106.56  :agent help
+GameTime_109.73  :grabBlack bread
+GameTime_110.89  :put down Black bread
+GameTime_111.53  :grabBlack bread
+GameTime_116.17  :put down Black bread
+GameTime_116.31  :finishBlack bread
+GameTime_124.68  :grabBiscuits
+GameTime_125.36  :put down Biscuits
+GameTime_132.84  :grabCauliflower
+GameTime_136.96  :put down Cauliflower
+GameTime_137.09  :finishCauliflower
+GameTime_141.15  :grabWatermelon
+GameTime_146.04  :put down Watermelon
+GameTime_146.07  :finishWatermelon
+GameTime_149.65  :grabOrange
+GameTime_150.46  :put down Orange
+GameTime_164.04  :agent help
+GameTime_170.38  :grabEgg
+GameTime_176.03  :put down Egg
+GameTime_176.2  :finishEgg
+GameTime_179  :grabMayonnaise
+GameTime_179.61  :put down Mayonnaise
+GameTime_185.09  :grabSugar
+GameTime_186.22  :put down Sugar
+GameTime_186.98  :grabSalt
+GameTime_191.21  :put down Salt
+GameTime_191.37  :finishSalt

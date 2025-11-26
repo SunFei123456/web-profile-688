@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design - Diyu Zhou Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./common.css">
+
+    <!-- Design Page Styles -->
+    <style>
+        .design-wrapper {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 150px 60px 60px;
+        }
+
+        /* Design Header Section */
+        .design-header {
+            background: rgba(79, 132, 196, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 60px 50px;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .design-header::before {
+            content: '';
+            position: absolute;
+            left: 40px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 150px;
+            height: 150px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect x="10" y="10" width="15" height="15" fill="rgba(255,255,255,0.3)"/><rect x="30" y="10" width="15" height="15" fill="rgba(255,255,255,0.2)"/><rect x="50" y="10" width="15" height="15" fill="rgba(255,255,255,0.15)"/><rect x="10" y="30" width="15" height="15" fill="rgba(255,255,255,0.2)"/><rect x="30" y="30" width="15" height="15" fill="rgba(255,255,255,0.3)"/><rect x="50" y="30" width="15" height="15" fill="rgba(255,255,255,0.2)"/><rect x="10" y="50" width="15" height="15" fill="rgba(255,255,255,0.15)"/><rect x="30" y="50" width="15" height="15" fill="rgba(255,255,255,0.2)"/><rect x="50" y="50" width="15" height="15" fill="rgba(255,255,255,0.3)"/></svg>');
+            background-size: contain;
+            opacity: 0.4;
+        }
+
+        .design-header-content {
+            position: relative;
+            z-index: 1;
+            margin-left: auto;
+        }
+
+        .design-header h1 {
+            font-size: 48px;
+            color: white;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        .design-header p {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 15px;
+            line-height: 1.8;
+            font-weight: 300;
+            margin-bottom: 15px;
+        }
+
+        /* Design Projects */
+        .design-projects {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .design-project {
+            background: rgba(255, 255, 255, 0.03);
+          
+            transition: all 0.3s ease;
+        }
+
+        .design-project:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(139, 251, 255, 0.2);
+        }
+
+        .design-project-image {
+            width: 100%;
+            height: 320px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .design-project-image img {
+            width: 100%;
+            height: 100%;
+            border-radius: 20px 20px 0px 0px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            border: 1px solid var(--primary);
+            border-bottom: none;
+        }
+
+
+        .design-project-info {
+            height: 400px;
+            padding: 40px 45px;
+            background: rgba(79, 132, 196, 0.6);
+            backdrop-filter: blur(10px);
+            border-radius: 0px 0px 20px 20px;
+        }
+
+        .design-project-title {
+            font-size: 24px;
+            color: white;
+            margin-bottom: 15px;
+            font-weight: 700;
+            text-decoration: underline;
+            text-decoration-color: rgba(255, 255, 255, 0.4);
+            text-underline-offset: 6px;
+        }
+
+        .design-project-description {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 14px;
+            line-height: 1.8;
+            font-weight: 300;
+            /* 多行文本截断CSS */
+            display: -webkit-box;
+            -webkit-line-clamp: 6;
+            /* 限制显示4行 */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-height: calc(1.8em * 6);
+            /* 行高 × 行数 */
+        }
+
+        /* Responsive */
+        @media screen and (max-width: 1024px) {
+            .design-wrapper {
+                padding: 100px 30px 50px;
+            }
+
+            .design-projects {
+                gap: 30px;
+            }
+
+            .design-project-image {
+                height: 280px;
+            }
+
+            .design-project-info {
+                height: auto;
+                padding: 35px 30px;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .design-wrapper {
+                padding: 100px 20px 40px;
+            }
+
+            .design-projects {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .design-header {
+                padding: 40px 30px;
+                margin-bottom: 40px;
+            }
+
+            .design-header::before {
+                width: 80px;
+                height: 80px;
+                left: 20px;
+            }
+
+            .design-header h1 {
+                font-size: 32px;
+                margin-bottom: 20px;
+            }
+
+            .design-header p {
+                font-size: 14px;
+            }
+
+            .design-project-image {
+                height: 300px;
+            }
+
+            .design-project-info {
+                padding: 30px 25px;
+            }
+
+            .design-project-title {
+                font-size: 20px;
+            }
+
+            .design-project-description {
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+     
+    <button class="theme-toggle-light" aria-label="Switch to dark mode"><i class="fas fa-sun"></i></button>
+    <button class="theme-toggle-dark" aria-label="Switch to light mode"> <i class="fas fa-moon"></i></button>
+
+    <header>
+        <nav class="navbar">
+            <h1><a href="index.html" class="logo">Diyu Zhou</a></h1>
+            <ul class="navigation-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cv.html">CV</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a class="active" href="design.html">Design</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <i class="mobile-menu-toggle fas fa-bars" aria-label="Toggle menu"></i>
+        </nav>
+
+        <div class="design-wrapper">
+            <!-- Design Header -->
+            <div class="design-header">
+                <div class="design-header-content">
+                    <h1>My Design</h1>
+                    <p>
+                        This page showcases my design projects that explore the intersection of technology,
+                        healthcare, and human experience. From innovative medical devices to architectural
+                        visualization tools, my work aims to solve real-world problems through thoughtful
+                        design and user-centered approaches.
+                    </p>
+                    <p>
+                        My projects span multiple domains including healthcare innovation, architectural
+                        technology, speculative design, and human-computer interaction. I am particularly
+                        interested in how design can improve public health outcomes, enhance our understanding
+                        of built environments, and create more intuitive interfaces between humans and
+                        complex systems.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Design Projects -->
+            <div class="design-projects">
+                <!-- Project 1: The Sugar Demon-->
+                <a href="design/detail-1.html" style="text-decoration: none;">
+                    <div class="design-project">
+                        <div class="design-project-image">
+                            <img src="./images/design/work1/cover.png" alt="The Sugar Demon">
+                        </div>
+                        <div class="design-project-info">
+                            <h2 class="design-project-title">The Sugar Demon</h2>
+                            <p class="design-project-description">
+                                we developed an interactive device that enables non-diabetics to experience the dietary
+                                restrictions of diabetic patients. Integrated with AI technology, the device offers
+                                personalized dietary comments, raising awareness of the daily challenges faced by
+                                individuals with diabetes.
+                            </p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Project 2: Informed Assembly: From Structural Logic to Fologram-Guided Fabrication -->
+                <a href="design/detail-2.html" style="text-decoration: none;">
+                    <div class="design-project">
+                        <div class="design-project-image">
+                            <img src="./images/design/work2/cover.jpg"
+                                alt="Informed Assembly: From Structural Logic to Fologram-Guided Fabrication">
+                        </div>
+                        <div class="design-project-info">
+                            <h2 class="design-project-title">Informed Assembly: From Structural Logic to Fologram-Guided
+                                Fabrication</h2>
+                            <p class="design-project-description">
+                                This project explores how Fologram can support designers during fabrication and assembly
+                                process by providing real-time visual guidance. It introduces a workflow that starts
+                                with 2D
+                                structural analysis and moves into 3D stress-based reinforcement topology, connecting
+                                parametric
+                                assembly with considerations of structural stability and material performance. From
+                                design to
+                                fabrication, the process includes both additive and subtractive manufacturing methods,
+                                generating
+                                G-code or rapid code for robotic fabrication. Fologram is used in the assembly stage to
+                                translate
+                                digital notations into physical actions, helping align parts with design intention. This
+                                approach
+                                allows the design-to-fabrication process to stay both flexible and accurate, while
+                                responding to
+                                both structural logic and practical constraints.
+                            </p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Project 3: A Novel Mixed Reality Navigation System for Precise Tunnel Localization in ACL Joint Bone Puncture Surgery: A Navigation Plugin -->
+
+                <a href="./design/detail-3.html" style="text-decoration: none;">
+                    <div class="design-project">
+                        <div class="design-project-image">
+                            <img src="./images/design/work3/1.png"
+                                alt="A Novel Mixed Reality Navigation System for Precise Tunnel Localization in ACL Joint Bone Puncture Surgery: A Navigation Plugin">
+                        </div>
+                        <div class="design-project-info">
+                            <h2 class="design-project-title">A Novel Mixed Reality Navigation System for Precise Tunnel
+                                Localization in ACL Joint Bone Puncture Surgery: A Navigation Plugin</h2>
+                            <p class="design-project-description">
+                                This plugin, based on the Fologram framework, is designed as an AR visualization tool
+                                for
+                                bone marrow puncture guidance using inputs from different skeletal models. By optimizing
+                                the
+                                model and converting point clouds, it generates features such as bone marrow pathways,
+                                path
+                                guidance, distance and angle indicators, and dangerous area warnings. The goal is to
+                                enhance
+                                surgical precision and streamline the surgical process for orthopedic surgeons.
+                            </p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Project 4: Circular Surveillance Society  -->
+                <a href="./design/detail-4.html">
+                    <div class="design-project">
+                        <div class="design-project-image">
+                            <img src="./images/design/work4/1.png" alt="Circular Surveillance Society ">
+                        </div>
+                        <div class="design-project-info">
+                            <h2 class="design-project-title">Circular Surveillance Society </h2>
+                            <p class="design-project-description">
+                                In the future society, brain computer interface technology will be widely used for
+                                monitoring and management; the rapid transmission and processing of information make
+                                society
+                                orderly, but the abuse of technology leads to the oppression and control of managers'
+                                spirit, and this project showcases the living conditions of a low-level manager in a
+                                circular surveillance society through an experimental video, reflecting the mental state
+                                under heavy surveillance.
+                            </p>
+                        </div>
+                    </div>
+                </a>
+
+
+                <!-- Project 5: The Generation of Anger in Multimodal Interaction Experiment -->
+                <a href="./design/detail-5.html" style="text-decoration: none;">
+                    <div class="design-project">
+                        <div class="design-project-image">
+                            <img src="./images/design/work5/1.png"
+                                alt="The Generation of Anger in Multimodal Interaction Experiment">
+                        </div>
+                        <div class="design-project-info">
+                            <h2 class="design-project-title">The Generation of Anger in Multimodal Interaction
+                                Experiment: Human-Animal Co-Design</h2>
+                            <p class="design-project-description">
+                                A speculative design project examining cohabitation between humans and urban wildlife.
+                                Through participatory design methods, this work proposes interventions that accommodate
+                                both
+                                human needs and animal behaviors in shared urban environments.
+                            </p>
+                        </div>
+                    </div>
+                </a>
+
+
+
+                <!-- project6 -->
+                <a href="./design/detail-6.html" style="text-decoration: none;">
+                    <div class="design-project">
+                        <div class="design-project-image">
+                            <img src="./images/design/work6/1.png"
+                                alt="Stealth Tank Design———Appearance stealth design based on RCS and ISAR">
+                        </div>
+                        <div class="design-project-info">
+                            <h2 class="design-project-title">Stealth Tank Design———Appearance stealth design based on
+                                RCS and ISAR</h2>
+                            <p class="design-project-description">
+                                stealth performance of the tank under radar waves is improved. Thus improving the
+                                battlefield survival and strategic strike capabilities of tanks.
+                            </p>
+                        </div>
+                    </div>
+                </a>
+
+
+                <!-- project7 -->
+                <a href="./design/detail-7.html" style="text-decoration: none;">
+                    <div class="design-project">
+                        <div class="design-project-image">
+                            <img src="./images/design/work7/1.png"
+                                alt="PUBLIC NUCLEIC ACID DETECTOR Scientific research projects">
+                        </div>
+                        <div class="design-project-info">
+                            <h2 class="design-project-title">PUBLIC NUCLEIC ACID DETECTOR Scientific research projects
+                            </h2>
+                            <p class="design-project-description">
+                                To solve the following problems in the COVID-19:
+                                Massive rise in testing for novel coronavirus nucleic acid
+                                Nucleic acid test in increased demand for healthcare professionals
+                                High expenditure on nucleic acid testing
+                                I hope to redesign the nucleic acid testing machine and user interfaceto address the
+                                above
+                                issues.
+                            </p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- project8 -->
+                <a href="./design/detail-8.html" style="text-decoration: none;">
+                    <div class="design-project">
+                        <div class="design-project-image">
+                            <img src="./images/design/work8/1.png"
+                                alt="PUBLIC NUCLEIC ACID DETECTOR Scientific research projects">
+                        </div>
+                        <div class="design-project-info">
+                            <h2 class="design-project-title">The Microexpressions of Architecture
+                                Visualization of building aging data in areas with medium to highhumidity based on
+                                infrared imaging and humidity sensing</h2>
+                            <p class="design-project-description">
+                                Based on the current living environment, there are a largenumber of explicit or implicit
+                                housing aging phenomena.However, there is often an emotional connection betweenpeople
+                                and their living space. When conducting housinginspections, residents often have doubts
+                                about the inspectionresults and are difficult to accept. Therefore, I hope to
+                                providebetter methods and visualization of housing aging inspection,so that residents
+                                can better understand their livingenvironment.
+                            </p>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+
+        <footer>
+            <p>Copyright © 2025 Diyu Zhou. All rights reserved.</p>
+        </footer>
+    </header>
+
+    <script src="./main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Diyu Zhou Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./common.css">
+
+    <!-- Home Page Styles -->
+    <style>
+        /* Home Page Container */
+        .home-page-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            background: transparent;
+            scroll-snap-type: y mandatory;
+
+        }
+
+        /* Hero Section */
+        .hero-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100dvh;
+            padding: 0 80px;
+            width: 100%;
+            background-color: #c79b5c;
+            gap: 60px;
+        }
+
+        .hero-content {
+            flex: 1;
+            max-width: 600px;
+            z-index: 2;
+        }
+
+        .hero-animation {
+            flex: 1;
+            height: 80%;
+            max-width: 600px;
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-greeting {
+            color: var(--gray);
+            font-size: 40px;
+            text-transform: uppercase;
+            font-weight: 900;
+        }
+
+        .hero-name {
+            line-height: 20px;
+            font-size: 50px;
+            letter-spacing: -4px;
+            text-transform: uppercase;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .hero-name-highlight {
+            color: var(--primary);
+        }
+
+        .hero-title {
+            color: var(--white);
+            font-size: 20px;
+            text-transform: uppercase;
+            font-weight: 500;
+            margin-bottom: 30px;
+        }
+
+        .hero-description {
+            margin-bottom: 30px;
+            color: var(--white);
+        }
+
+        .profile-image-wrapper {
+            flex-basis: 50%;
+        }
+
+        .profile-image {
+            width: 100%;
+            max-width: 450px;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .decorative-circles span {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 220px;
+            left: -20px;
+            border-radius: 50%;
+            background-color: var(--primary);
+        }
+
+        /* About Me Section */
+        .about-section {
+            width: 100%;
+            max-width: 1200px;
+            padding: 80px 50px;
+            text-align: center;
+            background: transparent;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+        }
+
+        .about-section-title {
+            text-transform: uppercase;
+            font-size: 50px;
+            color: var(--white);
+            margin-bottom: 15px;
+        }
+
+        .about-section-description {
+            color: var(--white);
+            font-size: 16px;
+        }
+
+        .about-content-wrapper {
+            display: grid;
+            margin-top: 50px;
+            width: 100%;
+        }
+
+        .about-introduction {
+            text-align: left;
+        }
+
+        .about-subtitle {
+            color: var(--primary);
+            font-size: 24px;
+            margin-bottom: 15px;
+            margin-top: 25px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .about-subtitle:first-child {
+            margin-top: 0;
+        }
+
+        .about-paragraph {
+            color: var(--white);
+            line-height: 1.8;
+            font-weight: 300;
+            font-size: 16px;
+        }
+
+        /* Mobile Responsive Design */
+        @media screen and (max-width: 768px) {
+
+            /* Hero Section Mobile */
+            .hero-section {
+                flex-direction: column-reverse;
+                padding: 20px;
+                justify-content: center;
+                gap: 30px;
+            }
+
+            .hero-content {
+                flex: none;
+                max-width: 100%;
+                text-align: center;
+            }
+
+            .hero-animation {
+                display: none;
+            }
+
+            .hero-greeting {
+                font-size: 24px;
+            }
+
+            .hero-name {
+                font-size: 32px;
+                line-height: 1.2;
+                letter-spacing: -2px;
+                margin-bottom: 15px;
+            }
+
+            .hero-title {
+                font-size: 14px;
+                letter-spacing: 3px;
+                margin-bottom: 20px;
+            }
+
+            .hero-description {
+                width: 100%;
+                font-size: 14px;
+                margin-bottom: 25px;
+            }
+
+            /* About Section Mobile */
+            .about-section {
+                padding: 60px 20px;
+            }
+
+            .about-section-title {
+                font-size: 32px;
+                margin-bottom: 12px;
+            }
+
+            .about-section-description {
+                font-size: 14px;
+            }
+
+            .about-content-wrapper {
+                margin-top: 30px;
+            }
+
+            .about-introduction {
+                text-align: center;
+            }
+
+            .about-subtitle {
+                font-size: 20px;
+                margin-top: 30px;
+                margin-bottom: 12px;
+                text-align: center !important;
+            }
+
+            .about-subtitle:first-child {
+                margin-top: 0;
+            }
+
+            .about-paragraph {
+                font-size: 14px;
+                line-height: 1.7;
+                width: 100% !important;
+                text-align: center !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+
+            /* Decorative circles hide on mobile */
+            .decorative-circles {
+                display: none;
+            }
+
+            .profile-image {
+                max-width: 260px;
+            }
+        }
+
+        /* Tablet Responsive Design */
+        @media screen and (max-width: 1024px) and (min-width: 769px) {
+            .hero-section {
+                padding: 0 40px;
+                gap: 40px;
+            }
+
+            .hero-content {
+                max-width: 450px;
+            }
+
+            .hero-animation {
+                max-width: 450px;
+            }
+
+            .hero-greeting {
+                font-size: 32px;
+            }
+
+            .hero-name {
+                font-size: 42px;
+            }
+
+            .hero-title {
+                font-size: 18px;
+            }
+
+            .hero-description {
+                width: 90%;
+            }
+
+            .about-section {
+                padding: 70px 40px;
+            }
+
+            .about-section-title {
+                font-size: 42px;
+            }
+
+            .about-subtitle {
+                font-size: 22px;
+            }
+
+            .about-paragraph {
+                width: 70% !important;
+            }
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Preloader -->
+     
+
+    <!-- Theme Toggle Buttons -->
+    <button class="theme-toggle-light" aria-label="Switch to dark mode">
+        <i class="fas fa-sun"></i>
+    </button>
+    <button class="theme-toggle-dark" aria-label="Switch to light mode">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <header>
+        <!-- Navigation Bar -->
+        <nav class="navbar">
+            <h1><a href="index.html" class="logo">Diyu Zhou</a></h1>
+            <ul class="navigation-menu">
+                <li><a class="active" href="index.html">Home</a></li>
+                <li><a href="cv.html">CV</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="design.html">Design</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <i class="mobile-menu-toggle fas fa-bars" aria-label="Toggle menu"></i>
+        </nav>
+
+        <!-- Home Page Container -->
+        <div class="home-page-container">
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="hero-content">
+                    <h3 class="hero-greeting">I'm</h3>
+                    <h1 class="hero-name">Diyu <span class="hero-name-highlight"> Zhou</span>.</h1>
+                    <h4 class="hero-title">A design technology researcher and practitioner</h4>
+                    <p class="hero-description">I am a design technology researcher and practitioner with expertise in
+                        XR development, motion capture systems, and human-computer interaction. <br />Currently
+                        pursuing a Master's degree in Design Technology at Cornell University with a focus on developing
+                        immersive environments and intelligent interaction systems for healthcare and education.</p>
+                </div>
+
+                <div class="hero-image">
+                    <img src="./images/profile.jpg" alt="Profile" class="profile-image">
+                </div>
+            </section>
+
+            <!-- About Me Section -->
+            <section class="about-section">
+                <h1 class="about-section-title">About Me</h1>
+                <p class="about-section-description">Get to know more about my background, interests, and what drives
+                    me.</p>
+                <div class="about-content-wrapper">
+                    <div class="about-introduction">
+                        <h3 class="about-subtitle" style="text-align: start;">Who I Am</h3>
+                        <p class="about-paragraph" style="text-align: left; width: 50%; margin-right: auto;">Your
+                            background and personal story goes here. Share what drives you and what makes you passionate
+                            about your work.</p>
+
+                        <h3 class="about-subtitle" style="text-align: end;">What I Do</h3>
+                        <p class="about-paragraph" style="text-align: right; width: 50%; margin-left: auto;">Describe
+                            your expertise and services. What value do you bring to your clients or projects?</p>
+
+                        <h3 class="about-subtitle" style="text-align: start;">My Approach</h3>
+                        <p class="about-paragraph" style="text-align: left; width: 50%; margin-right: auto;">Share your
+                            work philosophy and methodology. How do you approach challenges and deliver results?</p>
+
+                        <h3 class="about-subtitle" style="text-align: end;">My Vision</h3>
+                        <p class="about-paragraph" style="text-align: right; width: 50%; margin-left: auto;">Describe
+                            your future goals and aspirations. Where do you see yourself heading in your career?</p>
+
+
+                        <h3 class="about-subtitle" style="text-align: start;">My Skills</h3>
+                        <p class="about-paragraph" style="text-align: left; width: 50%; margin-right: auto;">Highlight
+                            your key skills and competencies. What tools and technologies are you proficient in?</p>
+                    </div>
+
+                </div>
+            </section>
+
+            <footer>
+                <p>Copyright © 2025 Diyu Zhou. All rights reserved.</p>
+            </footer>
+        </div>
+
+        <!-- Decorative Elements -->
+        <div class="decorative-circles">
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+
+    <script src="./main.js"></script>
+</body>
+
+</html>

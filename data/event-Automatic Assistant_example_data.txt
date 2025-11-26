@@ -1,0 +1,42 @@
+GameTime_12.8  :grabChinese cabbage
+GameTime_13.33  :put down Chinese cabbage
+GameTime_19.2  :agent help
+GameTime_19.53  :grabRound cabbage
+GameTime_23.53  :put down Round cabbage
+GameTime_23.67  :finishRound cabbage
+GameTime_30.96  :grabCucumbers
+GameTime_31.35  :put down Cucumbers
+GameTime_35.57  :grabApple
+GameTime_35.95  :put down Apple
+GameTime_39.83  :agent help
+GameTime_44.05  :grabOrange
+GameTime_48.8  :put down Orange
+GameTime_48.98  :finishOrange
+GameTime_54.85  :grabChicken
+GameTime_59.71  :put down Chicken
+GameTime_59.82  :finishChicken
+GameTime_65.54  :grabMilk
+GameTime_66.07  :put down Milk
+GameTime_69.46  :grabHoney mustard
+GameTime_73.38  :put down Honey mustard
+GameTime_73.46  :finishHoney mustard
+GameTime_86.2  :grabBlack bread
+GameTime_87.04  :put down Black bread
+GameTime_89.51  :agent help
+GameTime_93.8  :grabWhite bread
+GameTime_96.7  :put down White bread
+GameTime_96.83  :finishWhite bread
+GameTime_109.62  :grabBell peppers
+GameTime_113.46  :put down Bell peppers
+GameTime_115.01  :grabBell peppers
+GameTime_116.12  :put down Bell peppers
+GameTime_116.23  :finishBell peppers
+GameTime_121.67  :grabApple
+GameTime_125.85  :put down Apple
+GameTime_126  :finishApple
+GameTime_136.91  :grabCheese
+GameTime_140.31  :put down Cheese
+GameTime_140.42  :finishCheese
+GameTime_144.9  :grabSalt
+GameTime_146.74  :put down Salt
+GameTime_146.86  :finishSalt
