@@ -47,6 +47,37 @@
             resize: none;
         }
 
+        .notification {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            min-width: 260px;
+            padding: 16px 22px;
+            border-radius: 12px;
+            color: var(--white);
+            background: rgba(0, 0, 0, 0.75);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(-20px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            z-index: 999;
+        }
+
+        .notification.show {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+
+        .notification.success {
+            background: rgba(46, 204, 113, 0.9);
+        }
+
+        .notification.error {
+            background: rgba(231, 76, 60, 0.9);
+        }
+
         @media screen and (max-width:905px) {
             .contact-form input {
                 width: 300px;
@@ -82,15 +113,17 @@
             <p class="section-desc">Have a question or want to work together? Contact me now or send an email <a
                     href="mailto:dz372@cornell.edu">here</a>.</p>
             <div class="contact-container">
-                <form class="contact-form">
-                    <input type="text" placeholder="Full Name" required>
-                    <input type="email" placeholder="Email Address" required>
-                    <input type="text" placeholder="Subject" required>
-                    <textarea name="message" placeholder="Message Here..." required></textarea>
-                    <button class="btn" type="submit">Send</button>
+                <form class="contact-form form">
+                    <input type="text" name="name" placeholder="Full Name" data-i18n-placeholder="contact.form.name" required>
+                    <input type="email" name="email" placeholder="Email Address" data-i18n-placeholder="contact.form.email" required>
+                    <input type="text" name="subject" placeholder="Subject" data-i18n-placeholder="contact.form.subject" required>
+                    <textarea name="message" placeholder="Message Here..." data-i18n-placeholder="contact.form.message" required></textarea>
+                    <button class="btn" type="submit"><span>Send</span></button>
                 </form>
             </div>
         </section>
+
+        <div class="notification" id="notification" role="status" aria-live="polite"></div>
 
         <footer>
             <p>Copyright © 2025 Diyu Zhou. All rights reserved.</p>

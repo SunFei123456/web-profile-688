@@ -210,3 +210,114 @@ window.addEventListener('load', () => {
         recordVisit();
     }, 1000);
 });
+
+// ==================== 联系表单逻辑 ====================
+
+// 获取联系表单与提示节点，后续逻辑都以存在性为前提，避免在非 contact 页报错
+const contactForm = document.querySelector('.form');
+const notificationElement = document.getElementById('notification');
+
+/**
+ * 统一的轻量通知方法
+ * @param {string} message 需要展示的中文提示
+ * @param {'success'|'error'} type 控制样式的类型
+ */
+function showNotification(message, type = 'success') {
+    if (!notificationElement) return; // 没有容器时直接返回，保证函数可重复调用
+
+    // 先重置状态再写入内容，保证多次调用时不会叠加旧样式
+    notificationElement.className = `notification ${type}`;
+    notificationElement.textContent = message;
+    notificationElement.classList.add('show');
+
+    // 3 秒后自动隐藏，保持页面简洁
+    setTimeout(() => {
+        notificationElement.classList.remove('show');
+    }, 3000);
+}
+
+// 仅当页面存在表单时才挂载提交事件
+if (contactForm) {
+    contactForm.addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        // ====== 数据收集与验证 ======
+        const inputs = this.querySelectorAll('input, textarea, select');
+        const formData = {};
+        let isValid = true;
+
+        inputs.forEach((input) => {
+            const value = input.value.trim();
+
+            if (input.hasAttribute('required') && !value) {
+                // 必填校验失败时给出醒目边框提示
+                isValid = false;
+                input.style.borderColor = '#FF6B35';
+                setTimeout(() => {
+                    input.style.borderColor = '';
+                }, 3000);
+                return;
+            }
+
+            // 利用 data-i18n-placeholder 作为唯一键，确保字段映射稳定
+            const i18nKey = input.getAttribute('data-i18n-placeholder');
+            switch (i18nKey) {
+                case 'contact.form.name':
+                    formData.name = value;
+                    break;
+                case 'contact.form.email':
+                    formData.email = value;
+                    break;
+                case 'contact.form.subject':
+                    formData.subject = value;
+                    break;
+                case 'contact.form.message':
+                    formData.message = value;
+                    break;
+                default:
+                    break;
+            }
+
+            if (input.tagName === 'SELECT') {
+                formData.companyType = input.options[input.selectedIndex].text;
+            }
+        });
+
+        if (!isValid) {
+            showNotification('请填写所有必填字段', 'error');
+            return;
+        }
+
+        // ====== 提交控制（按钮状态 + fetch） ======
+        const submitBtn = this.querySelector('button[type="submit"]');
+        const textWrapper = submitBtn ? submitBtn.querySelector('span') : null;
+        const originalText = textWrapper ? textWrapper.textContent : 'Send';
+
+        if (textWrapper) {
+            textWrapper.textContent = '发送中...';
+        }
+        submitBtn.disabled = true;
+
+        try {
+            await fetch('https://script.google.com/macros/s/AKfycbwbKPsrnEGgbuvIXu3aJ9oqSFiVvIbj74_XVfadQ5tuB01gG-D37Asx9VClciheE6PJ/exec', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'text/plain',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            showNotification('您的消息已发送！我们会尽快与您联系。', 'success');
+            this.reset();
+        } catch (error) {
+            console.error('发送失败:', error);
+            showNotification('发送失败，请检查网络后重试。', 'error');
+        } finally {
+            // 无论成功失败都恢复按钮
+            if (textWrapper) {
+                textWrapper.textContent = originalText;
+            }
+            submitBtn.disabled = false;
+        }
+    });
+}
